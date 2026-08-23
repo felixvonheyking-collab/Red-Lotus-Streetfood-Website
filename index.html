@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1E0B0E">
+<title>Red Lotus Streetfood — Samstags auf dem Biberacher Wochenmarkt</title>
+<meta name="description" content="Loaded Fries, Bowls & Asia-Klassiker vom Foodtruck. Jede Woche eine frische Karte, inspiriert von den Nachtmärkten Asiens. Samstags 10–15 Uhr, Biberacher Wochenmarkt.">
+<meta property="og:title" content="Red Lotus Streetfood">
+<meta property="og:description" content="Loaded Fries, Bowls & Asia-Klassiker vom Foodtruck. Samstags 10–15 Uhr auf dem Biberacher Wochenmarkt.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://redlotusstreetfood.com/">
+<meta property="og:image" content="https://redlotusstreetfood.com/assets/img/loaded-fries.webp">
+<link rel="canonical" href="https://redlotusstreetfood.com/">
+<link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* ============================================================
+   RED LOTUS STREETFOOD — „Das Nachtmarkt-Plakat"
+   Tokens aus DESIGN-PLAN.md (freigegeben 21.08.2026)
+   ============================================================ */
+@font-face{
+  font-family:'Anton';
+  src:url('assets/fonts/anton-latin.woff2') format('woff2');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'Bricolage Grotesque';
+  src:url('assets/fonts/bricolage-grotesque-latin.woff2') format('woff2');
+  font-weight:400 700;font-style:normal;font-display:swap;
+}
+:root{
+  --night:#1E0B0E;      /* Canvas — Schwarz mit Rotstich */
+  --glut:#3B1116;       /* Angehobene Flächen */
+  --rot:#E0473A;        /* Lotus-Rot — Display, CTAs */
+  --blush:#F2C4BC;      /* Sekundärtext, Klammer-Zusätze */
+  --cream:#F5F0E6;      /* Fließtext (Familien-DNA Seite 1) */
+  --chili:#FF2E63;      /* NUR Schärfe-Badges */
+  --display:'Anton', 'Arial Narrow', sans-serif;
+  --body:'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+  --pill:16px;
+  --maxw:1280px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;color-scheme:dark}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+}
+body{
+  background:var(--night);
+  color:var(--cream);
+  font-family:var(--body);
+  font-size:1rem;line-height:1.6;
+  -webkit-tap-highlight-color:rgba(224,71,58,.25);
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--blush)}
+a:hover{color:var(--cream)}
+:focus-visible{outline:3px solid var(--rot);outline-offset:3px;border-radius:2px}
+section{scroll-margin-top:5.5rem}
+h1,h2,h3{text-wrap:balance}
+
+.skip-link{
+  position:absolute;left:-999px;top:0;z-index:99;
+  background:var(--rot);color:var(--night);padding:.75rem 1.25rem;
+  font-weight:600;text-decoration:none;border-radius:0 0 var(--pill) 0;
+}
+.skip-link:focus{left:0}
+
+/* ---------- Typo-Bausteine ---------- */
+.display{
+  font-family:var(--display);
+  font-weight:400;
+  text-transform:uppercase;
+  line-height:.88;
+  letter-spacing:.005em;
+  color:var(--rot);
+}
+.klammer{color:var(--blush)}
+.eyebrow{
+  font-size:.72rem;font-weight:600;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--blush);
+}
+.section-title{font-size:clamp(2.6rem,7vw,5rem);margin-bottom:.4em}
+
+/* ---------- Buttons ---------- */
+.pill{
+  display:inline-block;
+  font-family:var(--body);font-weight:600;font-size:.95rem;
+  letter-spacing:.04em;text-transform:uppercase;text-decoration:none;
+  padding:.85rem 1.7rem;border-radius:999px;
+  border:2px solid var(--rot);
+  cursor:pointer;
+  touch-action:manipulation;
+  transition:background-color .2s ease,color .2s ease;
+}
+.pill--voll{background:var(--rot);color:var(--night)}
+.pill--voll:hover{background:var(--cream);border-color:var(--cream);color:var(--night)}
+.pill--geist{background:transparent;color:var(--rot)}
+.pill--geist:hover{color:var(--cream);border-color:var(--cream)}
+
+/* ---------- Nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(30,11,14,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--glut);
+}
+.nav__inner{
+  max-width:var(--maxw);margin:0 auto;
+  display:flex;align-items:center;gap:1.5rem;
+  padding:.8rem max(1.25rem, env(safe-area-inset-right)) .8rem max(1.25rem, env(safe-area-inset-left));
+}
+.nav__logo{display:flex;align-items:center;text-decoration:none}
+.nav__logo img{flex:none}
+.nav__links{
+  display:flex;gap:1.4rem;margin-left:auto;align-items:center;
+  list-style:none;
+}
+.nav__links a:not(.pill){
+  text-decoration:none;color:var(--cream);
+  font-size:.85rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  padding:.4rem 0;
+  transition:color .2s ease;
+}
+.nav__links a:not(.pill):hover{color:var(--rot)}
+@media (max-width:720px){
+  .nav__links li:not(.nav__cta){display:none}
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  max-width:var(--maxw);margin:0 auto;
+  padding:clamp(3rem,8vh,6rem) 1.25rem 4rem;
+  display:grid;
+  grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);
+  gap:2rem;align-items:center;
+}
+.hero__eyebrow{margin-bottom:1.2rem}
+.hero h1{font-size:clamp(4rem,14vw,12.5rem)}
+.hero h1 .klammer{display:block;font-size:.32em;letter-spacing:.02em;margin-top:.35em}
+.hero__sub{
+  max-width:34rem;margin-top:1.6rem;color:var(--blush);font-size:1.05rem;
+}
+.hero__cta{margin-top:2.2rem;display:flex;gap:1rem;flex-wrap:wrap}
+.hero__fotos{position:relative;min-height:640px}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .hero__fotos{min-height:0;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+}
+
+/* ---------- Polaroids (Signature) ---------- */
+.polaroid{
+  background:var(--rot);
+  padding:10px 10px 34px;
+  width:min(300px,80vw);
+  box-shadow:none;
+  position:relative;
+}
+.polaroid::before{ /* Pin */
+  content:"";
+  position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+  width:16px;height:16px;border-radius:50%;
+  background:var(--cream);
+  border:3px solid var(--night);
+}
+.polaroid figcaption{
+  position:absolute;bottom:8px;left:0;right:0;
+  text-align:center;font-size:.72rem;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--night);
+}
+.hero__fotos .polaroid--1{transform:rotate(-4deg);position:absolute;top:0;left:0}
+.hero__fotos .polaroid--2{transform:rotate(5deg);position:absolute;bottom:0;right:0;width:min(250px,60vw)}
+@media (max-width:860px){
+  .hero__fotos .polaroid--1,.hero__fotos .polaroid--2{position:static}
+}
+
+/* ---------- Hinweis-Banner (aus der App gepflegt) ---------- */
+.hinweis-banner{
+  background:var(--rot);color:var(--night);
+  padding:.8rem max(1.25rem, env(safe-area-inset-right)) .8rem max(1.25rem, env(safe-area-inset-left));
+  text-align:center;font-weight:600;
+}
+.hinweis-banner p{max-width:var(--maxw);margin:0 auto}
+
+/* ---------- Ticker ---------- */
+.ticker{
+  background:var(--glut);
+  border-top:2px dotted var(--rot);
+  border-bottom:2px dotted var(--rot);
+  overflow:hidden;
+  padding:.8rem 0;
+  position:relative;
+}
+.ticker__stop{
+  position:absolute;right:.6rem;top:50%;transform:translateY(-50%);
+  background:var(--night);border:1px solid var(--rot);border-radius:50%;
+  width:34px;height:34px;display:grid;place-items:center;
+  cursor:pointer;color:var(--rot);
+  touch-action:manipulation;
+  transition:color .2s ease,border-color .2s ease;
+}
+.ticker__stop:hover{color:var(--cream);border-color:var(--cream)}
+.ticker.ist-pausiert .ticker__lauf{animation-play-state:paused}
+.ticker__lauf{
+  display:flex;gap:3rem;width:max-content;align-items:center;
+  font-family:var(--display);font-size:1.3rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--blush);white-space:nowrap;
+  animation:lauf 28s linear infinite;
+}
+.ticker__lauf span{display:inline-block}
+.ticker:hover .ticker__lauf{animation-play-state:paused}
+@keyframes lauf{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){
+  .ticker__lauf{animation:none;width:auto;flex-wrap:wrap;white-space:normal;justify-content:center}
+}
+
+/* ---------- Sektionen ---------- */
+.sektion{
+  max-width:var(--maxw);margin:0 auto;
+  padding:clamp(4rem,10vh,8rem) 1.25rem;
+}
+.sektion--voll{max-width:none;padding-left:0;padding-right:0}
+
+/* ---------- Boarding Pass / Menü ---------- */
+.pass{
+  background:var(--glut);
+  border:2px dashed var(--rot);
+  border-radius:12px;
+  padding:clamp(1.5rem,4vw,3rem);
+  max-width:56rem;
+  position:relative;
+}
+.pass__kopf{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:1rem;flex-wrap:wrap;margin-bottom:2rem;
+  padding-bottom:1.5rem;border-bottom:2px dotted var(--rot);
+}
+.pass__titel{font-size:clamp(2rem,5.5vw,3.6rem)}
+.pass__meta{
+  font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--blush);text-align:right;line-height:2;
+}
+.gericht{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  gap:1rem;align-items:center;
+  padding:1.1rem 0;
+  border-bottom:1px solid rgba(224,71,58,.25);
+}
+.gericht:last-of-type{border-bottom:none}
+.gericht__stempel{flex:none}
+.gericht__name{
+  font-family:var(--display);font-size:clamp(1.3rem,3.5vw,2rem);
+  text-transform:uppercase;letter-spacing:.02em;color:var(--cream);
+  line-height:1.05;
+}
+.gericht__zusatz{
+  display:block;font-family:var(--body);font-size:.82rem;font-weight:500;
+  letter-spacing:.06em;color:var(--blush);margin-top:.35rem;text-transform:none;
+}
+.gericht__preis{
+  font-family:var(--display);font-size:clamp(1.5rem,3vw,1.7rem); /* min 24px: Kontrast rot/glut 4.02:1 nur für Large Text ok */
+  color:var(--rot);font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.badge-chili{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-size:.7rem;font-weight:600;letter-spacing:.12em;color:var(--chili);
+  text-transform:uppercase;
+}
+.badge-tag{
+  font-size:.7rem;font-weight:600;letter-spacing:.12em;color:var(--blush);
+  text-transform:uppercase;white-space:nowrap;
+}
+.pass__fuss{
+  margin-top:1.6rem;font-size:.85rem;color:var(--blush);
+}
+.stempel-archiv{
+  margin-top:3rem;display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap;
+}
+.stempel-archiv p{
+  font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--blush);width:100%;
+}
+.stempel--blass{opacity:.35}
+
+/* ---------- Stempel (SVG-Umfeld) ---------- */
+.stempel{transform:rotate(-6deg)}
+.stempel--2{transform:rotate(4deg)}
+
+/* ---------- Wo & Wann ---------- */
+.wo{background:var(--glut)}
+.wo__inner{
+  max-width:var(--maxw);margin:0 auto;
+  padding:clamp(4rem,10vh,7rem) 1.25rem;
+  text-align:center;
+}
+.wo__zeit{font-size:clamp(3rem,9vw,7.5rem)}
+.wo__ort{
+  font-size:clamp(1.6rem,4.5vw,3rem);color:var(--cream);
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;
+  margin-top:.4rem;
+}
+.wo__hinweis{margin-top:1.4rem;color:var(--blush)}
+.wo .pill{margin-top:2rem}
+
+/* ---------- Galerie ---------- */
+.galerie{
+  display:flex;gap:2.5rem;flex-wrap:wrap;justify-content:center;
+  align-items:flex-start; /* verhindert, dass Querformat-Polaroids auf Nachbarhöhe gestreckt werden */
+  padding-top:1rem;
+}
+.galerie .polaroid:nth-child(odd){transform:rotate(-3deg)}
+.galerie .polaroid:nth-child(even){transform:rotate(3.5deg)}
+
+/* ---------- Buchen (Catering & Festivals) ---------- */
+.buchen{background:var(--glut)}
+.buchen__inner{
+  max-width:var(--maxw);margin:0 auto;
+  padding:clamp(4rem,10vh,8rem) 1.25rem;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem;
+}
+@media (max-width:860px){.buchen__inner{grid-template-columns:1fr}}
+.buchen__text{color:var(--blush);max-width:34rem;margin-top:1.2rem}
+.buchen__fotos{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:flex-start;margin-top:2.5rem}
+.buchen__fotos .polaroid{width:min(240px,70vw)}
+.buchen__fotos .polaroid:first-child{transform:rotate(-3deg)}
+.buchen__fotos .polaroid:last-child{transform:rotate(4deg)}
+.formular label{
+  display:block;font-size:.72rem;font-weight:600;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--blush);margin:1.1rem 0 .35rem;
+}
+.formular input,.formular textarea{
+  width:100%;background:var(--night);border:1px solid rgba(224,71,58,.4);
+  border-radius:10px;color:var(--cream);padding:.75rem .9rem;
+  font-family:var(--body);font-size:1rem;
+}
+.formular input:focus-visible,.formular textarea:focus-visible{outline:3px solid var(--rot);outline-offset:2px}
+.formular textarea{min-height:7rem;resize:vertical}
+.formular__reihe{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media (max-width:560px){.formular__reihe{grid-template-columns:1fr}}
+.formular button{margin-top:1.6rem}
+.formular__status{margin-top:1rem;font-size:.95rem;display:none}
+.formular__status.zeigen{display:block}
+.formular__status--ok{color:var(--cream)}
+.formular__status--fehler{color:var(--blush)}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:56rem}
+.faq details{
+  border-bottom:2px dotted var(--rot);
+  padding:1.1rem 0;
+}
+.faq summary{
+  cursor:pointer;list-style:none;display:flex;justify-content:space-between;
+  align-items:center;gap:1rem;
+  font-family:var(--display);font-size:clamp(1.1rem,2.6vw,1.5rem);
+  text-transform:uppercase;letter-spacing:.02em;color:var(--cream);
+  touch-action:manipulation;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";color:var(--rot);font-size:1.6em;line-height:1;flex:none;
+  transition:transform .2s ease;
+}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--blush);padding:.8rem 0 .2rem;max-width:44rem}
+
+/* ---------- Aktuelles (aus der App gepflegt) ---------- */
+#aktuelles .aktuelles__inner{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);
+  gap:3rem;align-items:center;
+}
+@media (max-width:860px){#aktuelles .aktuelles__inner{grid-template-columns:1fr}}
+#aktuelles .polaroid{width:min(420px,90vw);margin:0 auto}
+#aktuelles .aktuelles__text{color:var(--blush);max-width:34rem;margin-top:1.2rem;white-space:pre-line}
+
+/* ---------- Familie ---------- */
+.familie{text-align:center}
+.familie__text{max-width:36rem;margin:1.2rem auto 2rem;color:var(--blush)}
+
+/* ---------- Footer ---------- */
+footer{
+  border-top:1px solid var(--glut);
+  padding:3.5rem 1.25rem 2.5rem;
+}
+.footer__inner{
+  max-width:var(--maxw);margin:0 auto;
+  display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:center;
+}
+.footer__kontakt{list-style:none;display:flex;gap:2rem;flex-wrap:wrap}
+.footer__kontakt a{
+  text-decoration:none;font-weight:600;font-size:.9rem;letter-spacing:.05em;
+}
+.footer__kontakt a:hover{color:var(--rot)}
+.footer__recht{
+  grid-column:1 / -1;display:flex;gap:1.5rem;justify-content:center;
+  font-size:.78rem;color:var(--blush);flex-wrap:wrap;
+}
+.footer__recht a{color:var(--blush)}
+@media (max-width:720px){
+  .footer__inner{grid-template-columns:1fr;text-align:center;justify-items:center}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#top">Zum Inhalt springen</a>
+
+<!-- ==================== NAV ==================== -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="#top" aria-label="Red Lotus Streetfood — zum Seitenanfang">
+      <img src="assets/img/logo.webp" alt="" width="760" height="433" style="height:52px;width:auto">
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav__links">
+        <li><a href="#karte">Karte</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#buchen">Truck buchen</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="pill pill--voll" href="#wo">Wo? Wann?</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="hinweis-banner" id="hinweis-banner" role="status" hidden>
+  <p id="hinweis-banner-text"></p>
+</div>
+
+<main id="top">
+<!-- ==================== HERO ==================== -->
+<section class="hero" aria-labelledby="hero-titel">
+  <div>
+    <p class="eyebrow hero__eyebrow">Red Lotus · Biberach an der Riß</p>
+    <h1 id="hero-titel" class="display">
+      Street&shy;food
+      <span class="klammer">(vom Truck. Vom Feinsten.)</span>
+    </h1>
+    <p class="hero__sub">
+      Loaded Fries, Bowls &amp; Asia-Klassiker — jede Woche eine frische kleine Karte,
+      inspiriert von den Nachtmärkten Asiens. Samstags auf dem Biberacher Wochenmarkt:
+      frisch gekocht, in die Hand, fertig.
+    </p>
+    <div class="hero__cta">
+      <a class="pill pill--voll" href="#karte">Zur Karte</a>
+      <a class="pill pill--geist" href="#wo">Samstag, 10–15 Uhr</a>
+    </div>
+  </div>
+  <div class="hero__fotos">
+    <figure class="polaroid polaroid--1">
+      <img src="assets/img/loaded-fries.webp" alt="Loaded Fries mit Hackfleisch, Käsesauce, Sriracha-Mayo, roten Zwiebeln und Koriander in einer schwarzen Schale" width="1000" height="1333" fetchpriority="high">
+      <figcaption translate="no">Loaded Fries</figcaption>
+    </figure>
+    <figure class="polaroid polaroid--2">
+      <img src="assets/img/padthai-neu.webp" alt="Pad Thai mit Erdnüssen, Chilischeiben und Limette in einer Takeaway-Schale am Marktstand" width="900" height="1200">
+      <figcaption translate="no">Pad Thai</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ==================== TICKER ==================== -->
+<div class="ticker" id="ticker" translate="no">
+  <div class="ticker__lauf" aria-hidden="true">
+    <span>Loaded Fries</span><span>·</span><span>Bowls</span><span>·</span><span>Pad Thai</span><span>·</span><span>Gyoza</span><span>·</span><span>Bao Buns</span><span>·</span><span>Banh Mi</span><span>·</span>
+    <span>Loaded Fries</span><span>·</span><span>Bowls</span><span>·</span><span>Pad Thai</span><span>·</span><span>Gyoza</span><span>·</span><span>Bao Buns</span><span>·</span><span>Banh Mi</span><span>·</span>
+  </div>
+  <button class="ticker__stop" type="button" aria-pressed="false" aria-label="Laufschrift anhalten">
+    <svg class="icon-pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1h3v10H2zM7 1h3v10H7z" fill="currentColor"/></svg>
+    <svg class="icon-play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" style="display:none"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg>
+  </button>
+</div>
+
+<!-- ==================== MENÜ / BOARDING PASS ==================== -->
+<section class="sektion" id="karte" aria-labelledby="karte-titel">
+  <p class="eyebrow">Inspiriert von den Nachtmärkten Asiens</p>
+  <h2 id="karte-titel" class="display section-title">Die Karte <span class="klammer">(klein &amp; gut.)</span></h2>
+
+  <!-- ============================================================
+       WOCHENKARTE — wird normalerweise live aus der App befüllt
+       (streetfood-karte.html im Eventkalender). Dieser statische Block ist
+       nur die Rückfallebene, falls Firestore nicht erreichbar ist.
+       Stempel-Codes: BKK Bangkok · SEL Seoul · TYO Tokyo ·
+                      HAN Hanoi · HKG Hongkong
+       ⚠ PREISE SIND PLATZHALTER — vor Livegang durch echte ersetzen!
+       ============================================================ -->
+  <div class="pass">
+    <div class="pass__kopf">
+      <div>
+        <p class="eyebrow">Boarding Pass</p>
+        <h3 class="display pass__titel" id="pass-monat">Diese Woche</h3>
+      </div>
+      <p class="pass__meta">Red Lotus Streetfood<br>BC/Wochenmarkt · Sa 10–15</p>
+    </div>
+
+    <!-- Wird live aus der Red-Lotus-App befüllt (website/streetfood_karte);
+         der statische Inhalt bleibt als Rückfallebene, falls Firestore nicht erreichbar ist. -->
+    <div id="pass-gerichte">
+    <!-- Dauerbrenner -->
+    <div class="gericht">
+      <span class="gericht__stempel stempel" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="29" stroke="#E0473A" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="32" y="28" text-anchor="middle" fill="#E0473A" font-size="9" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1">IMMER</text>
+          <text x="32" y="40" text-anchor="middle" fill="#E0473A" font-size="9" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1">AN BORD</text>
+        </svg>
+      </span>
+      <p class="gericht__name"><span translate="no">Loaded Fries</span>
+        <span class="gericht__zusatz">Unser Dauerbrenner — Fries, Toppings, alles drauf</span>
+      </p>
+      <p class="gericht__preis">10,50&nbsp;€</p>
+    </div>
+
+    <!-- Motto-Gerichte des Monats -->
+    <div class="gericht">
+      <span class="gericht__stempel stempel--2" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+          <ellipse cx="32" cy="32" rx="29" ry="22" stroke="#F2C4BC" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="32" y="30" text-anchor="middle" fill="#F2C4BC" font-size="13" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2">BKK</text>
+          <text x="32" y="42" text-anchor="middle" fill="#F2C4BC" font-size="7" font-family="Arial, sans-serif" letter-spacing="1">BANGKOK</text>
+        </svg>
+      </span>
+      <p class="gericht__name"><span translate="no">Fried Rice</span>
+        <span class="gericht__zusatz">Gebratener Reis mit Gemüse &amp; Ei — vegan möglich</span>
+      </p>
+      <p class="gericht__preis">8,90&nbsp;€</p>
+    </div>
+
+    <div class="gericht">
+      <span class="gericht__stempel stempel" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+          <ellipse cx="32" cy="32" rx="29" ry="22" stroke="#F2C4BC" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="32" y="30" text-anchor="middle" fill="#F2C4BC" font-size="13" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2">TYO</text>
+          <text x="32" y="42" text-anchor="middle" fill="#F2C4BC" font-size="7" font-family="Arial, sans-serif" letter-spacing="1">TOKYO</text>
+        </svg>
+      </span>
+      <p class="gericht__name"><span translate="no">Veggie Gyoza</span>
+        <span class="gericht__zusatz">Knusprig gebratene Teigtaschen — vegan</span>
+      </p>
+      <p class="gericht__preis">7,50&nbsp;€</p>
+    </div>
+
+    <div class="gericht">
+      <span class="gericht__stempel stempel--2" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+          <ellipse cx="32" cy="32" rx="29" ry="22" stroke="#F2C4BC" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="32" y="30" text-anchor="middle" fill="#F2C4BC" font-size="13" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2">SEL</text>
+          <text x="32" y="42" text-anchor="middle" fill="#F2C4BC" font-size="7" font-family="Arial, sans-serif" letter-spacing="1">SEOUL</text>
+        </svg>
+      </span>
+      <p class="gericht__name"><span translate="no">Bulgogi Bowl</span>
+        <span class="gericht__zusatz">Mariniertes Rind, Reis, Gemüse
+          <span class="badge-chili" role="img" aria-label="scharf">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10.5 3.5c.3-1 .1-1.8-.5-2.5 1.8.2 2.8 1.2 3 3 .8 4.5-2 9-6.5 10.5C3.6 15.5 2 13.8 2 11.5c2.5 1 4.5.5 6-1.5 1.2-1.6 1.7-3.7 2.5-6.5Z" fill="#FF2E63"/></svg>
+            scharf
+          </span>
+        </span>
+      </p>
+      <p class="gericht__preis">9,90&nbsp;€</p>
+    </div>
+
+    </div><!-- /pass-gerichte -->
+
+    <p class="pass__fuss">Alles frisch am Truck gekocht. Solange der Vorrat reicht — wer zu spät kommt, kennt uns.</p>
+  </div>
+  <!-- ================== ENDE MONATSKARTE ================== -->
+
+  <div class="stempel-archiv" id="stempel-archiv">
+    <p>Wo wir schon waren</p>
+    <!-- Mit jedem Monat wächst die Reihe: Stempel des Vormonats hierher kopieren, Klasse stempel--blass -->
+    <span class="stempel--blass" aria-hidden="true">
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+        <ellipse cx="32" cy="32" rx="29" ry="22" stroke="#F2C4BC" stroke-width="2" stroke-dasharray="4 3" transform="rotate(-8 32 32)"/>
+        <text x="32" y="36" text-anchor="middle" fill="#F2C4BC" font-size="11" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1">AUG</text>
+      </svg>
+    </span>
+    <span style="font-size:.85rem;color:var(--blush)">— ab Oktober wächst hier die Sammlung.</span>
+  </div>
+</section>
+
+<!-- ==================== WO & WANN ==================== -->
+<section class="wo sektion--voll" id="wo" aria-labelledby="wo-titel">
+  <div class="wo__inner">
+    <p class="eyebrow">Wo? Wann?</p>
+    <h2 id="wo-titel" class="display wo__zeit">Samstag <span class="klammer">(10–15 Uhr)</span></h2>
+    <p class="wo__ort">Biberacher Wochenmarkt</p>
+    <p class="wo__hinweis">Einfach der Nase nach — oder dem roten Lotus.</p>
+    <a class="pill pill--geist" href="https://www.google.com/maps/search/?api=1&amp;query=Wochenmarkt+Biberach+an+der+Ri%C3%9F" rel="noopener">Route planen</a>
+  </div>
+</section>
+
+<!-- ==================== AKTUELLES (aus der App, website/streetfood_news) ==================== -->
+<section class="sektion" id="aktuelles" aria-labelledby="aktuelles-titel" hidden>
+  <div class="aktuelles__inner">
+    <figure class="polaroid" id="aktuelles-poster-wrap" hidden>
+      <img id="aktuelles-poster" src="" alt="Werbeposter zum angekündigten Event">
+      <figcaption>Nicht verpassen</figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow">Aktuelles</p>
+      <h2 id="aktuelles-titel" class="display section-title"></h2>
+      <p class="aktuelles__text" id="aktuelles-text"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== GALERIE ==================== -->
+<section class="sektion" id="galerie" aria-labelledby="galerie-titel">
+  <p class="eyebrow">Vom Markt &amp; aus der Schale</p>
+  <h2 id="galerie-titel" class="display section-title">Galerie <span class="klammer">(echt, nicht KI.)</span></h2>
+  <div class="galerie">
+    <figure class="polaroid">
+      <img src="assets/img/truck-tag.webp" alt="Der schwarze Red-Lotus-Foodtrailer bei Sonnenschein mit geöffneter Verkaufsklappe" width="1100" height="1467" loading="lazy">
+      <figcaption>Der Truck</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="assets/img/fries-pink.webp" alt="Zwei Portionen Loaded Fries mit Käsesauce, Hackfleisch und pink eingelegtem Rotkraut" width="1100" height="1467" loading="lazy">
+      <figcaption translate="no">Loaded Fries</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="assets/img/fried-rice.webp" alt="Pineapple Fried Rice mit Hähnchen, Koriander und Chili in einer Takeaway-Schale" width="900" height="1200" loading="lazy">
+      <figcaption translate="no">Pineapple Fried Rice</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="assets/img/khanom-krok.webp" alt="Khanom Krok — goldbraune Kokos-Küchlein in zwei Pappbechern" width="1100" height="1467" loading="lazy">
+      <figcaption translate="no">Khanom Krok</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="assets/img/mango-sticky-rice.webp" alt="Mango Sticky Rice mit Sesam und Kokossauce in einer Takeaway-Box" width="1100" height="1467" loading="lazy">
+      <figcaption translate="no">Mango Sticky Rice</figcaption>
+    </figure>
+    <figure class="polaroid">
+      <img src="assets/img/chefin.webp" alt="Paew in schwarzer Kochjacke mit roter Paspel, lächelnd mit verschränkten Armen" width="900" height="1200" loading="lazy">
+      <figcaption>Die Chefin</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ==================== TRUCK BUCHEN (CATERING & FESTIVALS) ==================== -->
+<section class="buchen sektion--voll" id="buchen" aria-labelledby="buchen-titel">
+  <div class="buchen__inner">
+    <div>
+      <p class="eyebrow">Catering &amp; Festivals</p>
+      <h2 id="buchen-titel" class="display section-title">Der Truck kommt <span class="klammer">(zu euch.)</span></h2>
+      <p class="buchen__text">
+        Festival, Stadtfest, Firmenfest, Geburtstag oder private Feier — wir sind für Events aller Art buchbar. Wir stellen den Truck bei euch auf
+        und kochen frisch vor Ort — Loaded Fries, Bowls und Asia-Klassiker, in kleinen und
+        großen Portionen. Unkompliziert, schnell, für hungrige Mengen gebaut.
+      </p>
+      <p class="buchen__text">
+        Ihr plant ein gesetztes Dinner, Buffet-Catering oder eine Hochzeit? Das macht unsere
+        <a href="https://www.redlotus-asianfood.com" rel="noopener">große Schwester</a>.
+      </p>
+      <div class="buchen__fotos">
+        <figure class="polaroid">
+          <img src="assets/img/thai-tea.webp" alt="Original Thai Tea mit Eiswürfeln und Papierstrohhalm am Truck" width="900" height="1126" loading="lazy">
+          <figcaption translate="no">Original Thai Tea</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <img src="assets/img/salat-schiffchen.webp" alt="Glasnudelsalat mit Paprika, Kräutern und Kracker im Pappschiffchen" width="1000" height="750" loading="lazy">
+          <figcaption>Glasnudelsalat</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div>
+      <form class="formular" id="buchen-formular" novalidate>
+        <label for="bf-name">Name</label>
+        <input type="text" id="bf-name" name="name" autocomplete="name" required>
+        <div class="formular__reihe">
+          <div>
+            <label for="bf-email">E-Mail</label>
+            <input type="email" id="bf-email" name="email" autocomplete="email" inputmode="email" spellcheck="false" required>
+          </div>
+          <div>
+            <label for="bf-telefon">Telefon (optional)</label>
+            <input type="tel" id="bf-telefon" name="telefon" autocomplete="tel" inputmode="tel">
+          </div>
+        </div>
+        <div class="formular__reihe">
+          <div>
+            <label for="bf-datum">Wunschtermin</label>
+            <input type="date" id="bf-datum" name="datum">
+          </div>
+          <div>
+            <label for="bf-ort">Ort / Anlass</label>
+            <input type="text" id="bf-ort" name="ort" placeholder="z. B. Stadtfest Biberach…" autocomplete="off">
+          </div>
+        </div>
+        <label for="bf-nachricht">Eure Anfrage</label>
+        <textarea id="bf-nachricht" name="nachricht" placeholder="Wie viele Gäste, was schwebt euch vor…"></textarea>
+        <button type="submit" class="pill pill--voll">Anfrage senden</button>
+        <p class="formular__status" id="bf-status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section class="sektion" id="faq" aria-labelledby="faq-titel">
+  <p class="eyebrow">Gut zu wissen</p>
+  <h2 id="faq-titel" class="display section-title">FAQ <span class="klammer">(kurz &amp; ehrlich.)</span></h2>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Wie kann ich bezahlen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Am Truck bar oder per PayPal — ein Kartenlesegerät haben wir nicht." } },
+      { "@type": "Question", "name": "Gibt es vegane und vegetarische Gerichte?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Immer. Auf der Wochenkarte sind vegane und vegetarische Gerichte gekennzeichnet, vieles lässt sich auf Wunsch anpassen." } },
+      { "@type": "Question", "name": "Was ist mit Allergenen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Wir kochen frisch und wissen genau, was in jedem Gericht steckt — fragt am Truck. Erdnüsse und Soja kommen in unserer Küche häufig vor." } },
+      { "@type": "Question", "name": "Kann ich vorbestellen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Für größere Bestellungen am besten vorher per WhatsApp oder E-Mail melden — dann steht das Essen fertig bereit." } },
+      { "@type": "Question", "name": "Steht ihr auch bei Regen auf dem Markt?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Samstags sind wir grundsätzlich da. Bei extremem Wetter geben wir rechtzeitig auf Instagram und auf der Website Bescheid." } },
+      { "@type": "Question", "name": "Ab welcher Größe kommt der Truck zu uns?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Vom Vereinsfest bis zum Festival — einfach über das Anfrageformular melden, wir antworten schnell mit einem ehrlichen Ja oder Nein." } }
+    ]
+  }
+  </script>
+  <div class="faq">
+    <details>
+      <summary>Wie kann ich bezahlen?</summary>
+      <p>Am Truck geht's bar oder per <span translate="no">PayPal</span> — ein Kartenlesegerät haben wir nicht.</p>
+    </details>
+    <details>
+      <summary>Gibt es vegane und vegetarische Gerichte?</summary>
+      <p>Immer. Auf der Wochenkarte oben sind vegane und vegetarische Gerichte gekennzeichnet — und vieles lässt sich auf Wunsch anpassen. Sprecht uns einfach an.</p>
+    </details>
+    <details>
+      <summary>Was ist mit Allergenen?</summary>
+      <p>Wir kochen frisch und wissen genau, was in jedem Gericht steckt. Fragt am Truck — wir sagen euch ehrlich, was drin ist. Erdnüsse und Soja kommen in unserer Küche häufig vor.</p>
+    </details>
+    <details>
+      <summary>Kann ich vorbestellen?</summary>
+      <p>Für größere Bestellungen schreibt uns am besten vorher per WhatsApp oder E-Mail — dann steht euer Essen fertig bereit, wenn ihr kommt.</p>
+    </details>
+    <details>
+      <summary>Steht ihr auch bei Regen auf dem Markt?</summary>
+      <p>Samstags sind wir grundsätzlich da. Bei extremem Wetter geben wir rechtzeitig auf Instagram und hier oben auf der Website Bescheid.</p>
+    </details>
+    <details>
+      <summary>Ab welcher Größe kommt der Truck zu uns?</summary>
+      <p>Vom Vereinsfest bis zum Festival — schreibt uns über das Formular oben, wir melden uns schnell mit einem ehrlichen Ja oder Nein.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ==================== FAMILIE ==================== -->
+<section class="sektion familie" aria-labelledby="familie-titel">
+  <p class="eyebrow">Aus gutem Hause</p>
+  <h2 id="familie-titel" class="display section-title">Die kleine Schwester <span class="klammer">(das sind wir.)</span></h2>
+  <p class="familie__text">
+    Streetfood ist die freche kleine Schwester von <span translate="no">Red Lotus Asian Food</span>.
+    Catering für Firmenevents und Hochzeiten, Kochkurse, Mittagstisch — das macht die Große.
+    Gleiche Familie, andere Bühne.
+  </p>
+  <a class="pill pill--geist" href="https://www.redlotus-asianfood.com" rel="noopener">Zu Red Lotus Asian Food</a>
+</section>
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer__inner">
+    <!-- Maneki-Neko Line-Art — nach dem echten Red-Lotus-Kätzchen gezeichnet:
+         erhobene rechte Pfote, rote Innenohren, Halsband mit Glocke, Glücksmünze -->
+    <svg width="84" height="97" viewBox="0 0 100 116" fill="none" aria-hidden="true">
+      <!-- Ohren mit roten Innenohren -->
+      <path d="M33 23 36 8l11 10M67 23 64 8 53 18" stroke="#F2C4BC" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M36.5 19 37.5 12l5.5 5Z" fill="#E0473A"/>
+      <path d="M63.5 19 62.5 12l-5.5 5Z" fill="#E0473A"/>
+      <!-- Kopf -->
+      <circle cx="50" cy="35" r="19" stroke="#F2C4BC" stroke-width="2.4"/>
+      <!-- Gesicht -->
+      <circle cx="43" cy="33" r="2.4" fill="#F2C4BC"/>
+      <circle cx="57" cy="33" r="2.4" fill="#F2C4BC"/>
+      <path d="M50 37.5v2.5M46 41.5q2 2.6 4 0q2 2.6 4 0" stroke="#F2C4BC" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+      <path d="M36 36c-3 .2-5.5 0-8-.8M36.5 39.5c-3 .8-5.5 1-8 .8M64 36c3 .2 5.5 0 8-.8M63.5 39.5c3 .8 5.5 1 8 .8" stroke="#F2C4BC" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- Erhobene rechte Pfote (vom Betrachter rechts) -->
+      <path d="M67 55c8-3 12-13 10-24" stroke="#F2C4BC" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="77" cy="26" r="6.5" stroke="#F2C4BC" stroke-width="2.2"/>
+      <path d="M74.5 20.5v3M78 20v3M81 21.5l-1 2.6" stroke="#E0473A" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- Körper -->
+      <path d="M34 49c-8 8-11 20-8 32 3 11 13 17 24 17s21-6 24-17c2-8 1-16-2-23" stroke="#F2C4BC" stroke-width="2.4" stroke-linecap="round"/>
+      <!-- Halsband mit Glocke -->
+      <path d="M35 50q15 9 30 0" stroke="#E0473A" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="50" cy="59" r="3.6" stroke="#F2C4BC" stroke-width="1.8"/>
+      <path d="M50 60.5v2" stroke="#F2C4BC" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- Glücksmünze mit angedeuteten Zeichen -->
+      <ellipse cx="52" cy="86" rx="11.5" ry="15" stroke="#F2C4BC" stroke-width="2.2"/>
+      <path d="M48 80h8M52 80v5M49 89h6M52 86v7" stroke="#F2C4BC" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- Linke Pfote hält die Münze -->
+      <circle cx="38" cy="79" r="5" stroke="#F2C4BC" stroke-width="2"/>
+    </svg>
+    <ul class="footer__kontakt">
+      <li><a href="mailto:info@redlotusstreetfood.com">info@redlotusstreetfood.com</a></li>
+      <li><a href="tel:+4915155460254">0151&nbsp;55460254</a></li>
+      <!-- Instagram: erst verlinken, wenn die Seite live ist
+      <li><a href="https://www.instagram.com/red.lotusstreetfood" rel="noopener">@red.lotusstreetfood</a></li>
+      -->
+    </ul>
+    <div style="text-align:center">
+      <img src="assets/img/logo.webp" alt="Red Lotus Streetfood — Logo" width="760" height="433" style="width:200px;height:auto;margin:0 auto .5rem" loading="lazy">
+      <p style="font-size:.85rem;color:var(--blush)">© 2026 <span translate="no">Red Lotus Streetfood</span></p>
+    </div>
+    <nav class="footer__recht" aria-label="Rechtliches">
+      <!-- ⚠ VOR LIVEGANG PFLICHT: Impressum/Datenschutz mit echten Angaben füllen (Stubs liegen bei) -->
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+<script>
+// ============================================================
+// WOCHENKARTE LIVE AUS DER RED-LOTUS-APP
+// Liest das öffentliche Dokument website/streetfood_karte
+// (gleiches Muster wie der Speiseplan auf redlotus-asianfood.com).
+// Sicherung: Bei JEDEM Fehler (Netz, 404, leere Daten) bleibt der
+// statisch eingebaute Stand unangetastet stehen.
+// ============================================================
+(function(){
+  var URL = "https://firestore.googleapis.com/v1/projects/red-lotus-eventkalender/databases/default/documents/website/streetfood_karte?key=AIzaSyA0y6NWpF3N7241mA72Cj-gU_pvbqpNdD4";
+  var STAEDTE = { BKK:"BANGKOK", SEL:"SEOUL", TYO:"TOKYO", HAN:"HANOI", HKG:"HONGKONG" };
+
+  function sv(x){ return (x && x.stringValue || "").trim(); }
+  function bv(x){ return !!(x && x.booleanValue); }
+  function esc(t){ var d=document.createElement("div"); d.textContent=t; return d.innerHTML; }
+
+  function stempelSvg(code, blass){
+    var stadt = STAEDTE[code];
+    if(!stadt) return "";
+    return '<svg width="'+(blass?56:64)+'" height="'+(blass?56:64)+'" viewBox="0 0 64 64" fill="none">'
+      + '<ellipse cx="32" cy="32" rx="29" ry="22" stroke="#F2C4BC" stroke-width="2" stroke-dasharray="4 3"/>'
+      + '<text x="32" y="30" text-anchor="middle" fill="#F2C4BC" font-size="13" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2">'+esc(code)+'</text>'
+      + '<text x="32" y="42" text-anchor="middle" fill="#F2C4BC" font-size="7" font-family="Arial, sans-serif" letter-spacing="1">'+esc(stadt)+'</text></svg>';
+  }
+  function dauerbrennerSvg(){
+    return '<svg width="64" height="64" viewBox="0 0 64 64" fill="none">'
+      + '<circle cx="32" cy="32" r="29" stroke="#E0473A" stroke-width="2" stroke-dasharray="4 3"/>'
+      + '<text x="32" y="28" text-anchor="middle" fill="#E0473A" font-size="9" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1">IMMER</text>'
+      + '<text x="32" y="40" text-anchor="middle" fill="#E0473A" font-size="9" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1">AN BORD</text></svg>';
+  }
+  function monatsSvg(k){
+    return '<svg width="56" height="56" viewBox="0 0 64 64" fill="none">'
+      + '<ellipse cx="32" cy="32" rx="29" ry="22" stroke="#F2C4BC" stroke-width="2" stroke-dasharray="4 3" transform="rotate(-8 32 32)"/>'
+      + '<text x="32" y="36" text-anchor="middle" fill="#F2C4BC" font-size="11" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1">'+esc(k)+'</text></svg>';
+  }
+  function chiliBadge(){
+    return ' <span class="badge-chili" role="img" aria-label="scharf">'
+      + '<svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10.5 3.5c.3-1 .1-1.8-.5-2.5 1.8.2 2.8 1.2 3 3 .8 4.5-2 9-6.5 10.5C3.6 15.5 2 13.8 2 11.5c2.5 1 4.5.5 6-1.5 1.2-1.6 1.7-3.7 2.5-6.5Z" fill="#FF2E63"/></svg>scharf</span>';
+  }
+
+  fetch(URL).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); }).then(function(d){
+    var f = d.fields || {};
+    var titel = sv(f.titel) || sv(f.monat); // f.monat: Altbestand aus Monats-Phase
+    var roh = (f.gerichte && f.gerichte.arrayValue && f.gerichte.arrayValue.values) || [];
+    var gerichte = roh.map(function(v){
+      var g = (v.mapValue || {}).fields || {};
+      return { name:sv(g.name), stempel:sv(g.stempel),
+               beschreibung:sv(g.beschreibung) || sv(g.zusatz), preis:sv(g.preis),
+               vegan:bv(g.vegan), vegetarisch:bv(g.vegetarisch), glutenfrei:bv(g.glutenfrei),
+               scharf:bv(g.scharf), db:bv(g.dauerbrenner) };
+    }).filter(function(g){ return g.name; });
+    if(!titel || !gerichte.length) return; // leer → statischer Stand bleibt
+
+    gerichte.sort(function(a,b){ return (b.db?1:0)-(a.db?1:0); }); // Dauerbrenner zuerst
+
+    document.getElementById("pass-monat").textContent = titel;
+    document.getElementById("pass-gerichte").innerHTML = gerichte.map(function(g, i){
+      var stempel = g.db ? dauerbrennerSvg() : stempelSvg(g.stempel);
+      var zusatz = esc(g.beschreibung);
+      var tags = [];
+      if(g.vegan) tags.push("vegan");
+      else if(g.vegetarisch) tags.push("vegetarisch"); // vegan impliziert vegetarisch
+      if(g.glutenfrei) tags.push("glutenfrei");
+      tags.forEach(function(t){ zusatz += (zusatz?" · ":"") + '<span class="badge-tag">'+t+'</span>'; });
+      if(g.scharf) zusatz += chiliBadge();
+      var preis = esc(g.preis); if(preis && preis.indexOf("€")===-1) preis += " €";
+      return '<div class="gericht">'
+        + '<span class="gericht__stempel '+(i%2?"stempel--2":"stempel")+'" aria-hidden="true">'+stempel+'</span>'
+        + '<p class="gericht__name"><span translate="no">'+esc(g.name)+'</span>'
+        + (zusatz ? '<span class="gericht__zusatz">'+zusatz+'</span>' : '')
+        + '</p><p class="gericht__preis">'+preis+'</p></div>';
+    }).join("");
+
+    // Laufband mit den Gerichten der aktuellen Karte befüllen (inkl. Mini-Stempel)
+    function miniStempel(code){
+      var stadt = STAEDTE[code];
+      if(!stadt) return "";
+      return '<span aria-hidden="true" style="display:inline-flex"><svg width="46" height="34" viewBox="0 0 64 48" fill="none">'
+        + '<ellipse cx="32" cy="24" rx="29" ry="20" stroke="#F2C4BC" stroke-width="2.6" stroke-dasharray="4 3" transform="rotate(-6 32 24)"/>'
+        + '<text x="32" y="30" text-anchor="middle" fill="#F2C4BC" font-size="17" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2">'+esc(code)+'</text></svg></span>';
+    }
+    var lauf = document.querySelector(".ticker__lauf");
+    if(lauf && gerichte.length >= 2){
+      var einmal = gerichte.map(function(g){
+        return "<span>"+esc(g.name)+"</span>" + miniStempel(g.stempel);
+      }).join("<span>·</span>");
+      lauf.innerHTML = einmal + "<span>·</span>" + einmal + "<span>·</span>";
+    }
+
+    var archivRoh = (f.archiv && f.archiv.arrayValue && f.archiv.arrayValue.values) || [];
+    var archiv = archivRoh.map(sv).filter(Boolean);
+    if(archiv.length){
+      document.getElementById("stempel-archiv").innerHTML =
+        '<p>Wo wir schon waren</p>' +
+        archiv.map(function(k){ return '<span class="stempel--blass" aria-hidden="true">'+monatsSvg(k)+'</span>'; }).join("");
+    }
+  }).catch(function(){ /* Statischer Fallback bleibt stehen */ });
+})();
+
+// ============================================================
+// TRUCK-BUCHEN-FORMULAR
+// Gleiche Kette wie die Formulare auf redlotus-asianfood.com:
+// Anfrage → Cloud Function wixFormWebhook → roter Termin im Kalender.
+// Fällt der Aufruf aus, öffnet sich stattdessen eine vorbefüllte E-Mail.
+// ============================================================
+(function(){
+  var WEBHOOK = 'https://wixformwebhook-e6seurotja-ew.a.run.app?key=rl_wix_h7k2m9p4';
+  // TODO vor Livegang: auf info@redlotusstreetfood.com umstellen, sobald das Postfach existiert
+  var FALLBACK_MAIL = 'redlotus.asianfood@gmail.com';
+  var form = document.getElementById('buchen-formular');
+  var status = document.getElementById('bf-status');
+
+  function zeige(text, ok){
+    status.textContent = text;
+    status.className = 'formular__status zeigen ' + (ok ? 'formular__status--ok' : 'formular__status--fehler');
+  }
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var d = new FormData(form);
+    if(!String(d.get('name')||'').trim()){ zeige('Bitte euren Namen eintragen.', false); document.getElementById('bf-name').focus(); return; }
+    var email = String(d.get('email')||'').trim();
+    if(!email || email.indexOf('@') < 1){ zeige('Bitte eine gültige E-Mail-Adresse eintragen.', false); document.getElementById('bf-email').focus(); return; }
+
+    var btn = form.querySelector('button[type="submit"]');
+    var btnText = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Wird gesendet…';
+
+    var payload = {
+      data: {
+        formName: 'Streetfood-Anfrage (Streetfood-Website)',
+        submissions: [
+          { label: 'Ansprechpartner', value: d.get('name') || '' },
+          { label: 'Email', value: email },
+          { label: 'Telefonnummer', value: d.get('telefon') || '' },
+          { label: 'Ort / Anlass', value: d.get('ort') || '' },
+          { label: 'Mehr Informationen und/oder Fragen zum Catering', value: d.get('nachricht') || '' }
+        ]
+      }
+    };
+    if(d.get('datum')) payload.data['field:datum_firmenevent'] = d.get('datum');
+
+    var ok = false;
+    try{
+      var res = await fetch(WEBHOOK, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+      ok = res.ok;
+    }catch(err){ ok = false; }
+
+    if(ok){
+      zeige('Danke! Eure Anfrage ist direkt bei uns im Kalender gelandet — wir melden uns schnell.', true);
+      form.reset();
+    }else{
+      var subject = encodeURIComponent('Streetfood-Anfrage: ' + (d.get('ort') || d.get('name')));
+      var body = encodeURIComponent('Name: '+d.get('name')+'\nE-Mail: '+email+'\nTelefon: '+(d.get('telefon')||'')+'\nWunschtermin: '+(d.get('datum')||'')+'\nOrt/Anlass: '+(d.get('ort')||'')+'\n\nNachricht:\n'+(d.get('nachricht')||''));
+      zeige('Direktversand hat nicht geklappt — es öffnet sich stattdessen eine E-Mail mit euren Angaben. Einfach abschicken.', false);
+      window.location.href = 'mailto:'+FALLBACK_MAIL+'?subject='+subject+'&body='+body;
+    }
+    btn.disabled = false; btn.textContent = btnText;
+  });
+})();
+
+// Hinweis-Banner (z. B. Marktausfall) — aus der App gepflegt (website/streetfood_hinweis)
+(function(){
+  fetch("https://firestore.googleapis.com/v1/projects/red-lotus-eventkalender/databases/default/documents/website/streetfood_hinweis?key=AIzaSyA0y6NWpF3N7241mA72Cj-gU_pvbqpNdD4")
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(d){
+      var f = d.fields || {};
+      var aktiv = !!(f.aktiv && f.aktiv.booleanValue);
+      var text = (f.text && f.text.stringValue || "").trim();
+      if(aktiv && text){
+        document.getElementById("hinweis-banner-text").textContent = text;
+        document.getElementById("hinweis-banner").hidden = false;
+      }
+    }).catch(function(){ /* kein Banner */ });
+})();
+
+// Aktuelles / Event-Ankündigung — aus der App gepflegt (website/streetfood_news)
+(function(){
+  fetch("https://firestore.googleapis.com/v1/projects/red-lotus-eventkalender/databases/default/documents/website/streetfood_news?key=AIzaSyA0y6NWpF3N7241mA72Cj-gU_pvbqpNdD4")
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(d){
+      var f = d.fields || {};
+      var aktiv = !!(f.aktiv && f.aktiv.booleanValue);
+      var titel = (f.titel && f.titel.stringValue || "").trim();
+      var text = (f.text && f.text.stringValue || "").trim();
+      var bild = (f.bild && f.bild.stringValue || "").trim();
+      if(!aktiv || (!titel && !text && !bild)) return;
+      document.getElementById("aktuelles-titel").textContent = titel || "Aktuelles";
+      document.getElementById("aktuelles-text").textContent = text;
+      if(bild && bild.indexOf("data:image/") === 0){
+        document.getElementById("aktuelles-poster").src = bild;
+        document.getElementById("aktuelles-poster-wrap").hidden = false;
+      }
+      document.getElementById("aktuelles").hidden = false;
+    }).catch(function(){ /* Sektion bleibt versteckt */ });
+})();
+
+// Laufschrift-Pause (WCAG 2.2.2): Klick stoppt/startet die Animation
+(function(){
+  var t = document.getElementById('ticker');
+  var b = t.querySelector('.ticker__stop');
+  b.addEventListener('click', function(){
+    var pausiert = t.classList.toggle('ist-pausiert');
+    b.setAttribute('aria-pressed', String(pausiert));
+    b.setAttribute('aria-label', pausiert ? 'Laufschrift fortsetzen' : 'Laufschrift anhalten');
+    b.querySelector('.icon-pause').style.display = pausiert ? 'none' : '';
+    b.querySelector('.icon-play').style.display  = pausiert ? '' : 'none';
+  });
+})();
+</script>
+</body>
+</html>
