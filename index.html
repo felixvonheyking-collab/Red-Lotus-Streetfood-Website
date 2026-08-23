@@ -517,10 +517,7 @@ footer{
 
 <!-- ==================== TICKER ==================== -->
 <div class="ticker" id="ticker" translate="no">
-  <div class="ticker__lauf" aria-hidden="true">
-    <span>Loaded Fries</span><span>·</span><span>Bowls</span><span>·</span><span>Pad Thai</span><span>·</span><span>Gyoza</span><span>·</span><span>Bao Buns</span><span>·</span><span>Banh Mi</span><span>·</span>
-    <span>Loaded Fries</span><span>·</span><span>Bowls</span><span>·</span><span>Pad Thai</span><span>·</span><span>Gyoza</span><span>·</span><span>Bao Buns</span><span>·</span><span>Banh Mi</span><span>·</span>
-  </div>
+  <div class="ticker__lauf" aria-hidden="true"><!--karte:ticker--><span>Loaded Fries Bulgogi</span><span aria-hidden="true" style="display:inline-flex"><svg width="46" height="34" viewBox="0 0 64 48" fill="none"><ellipse cx="32" cy="24" rx="29" ry="20" stroke="#F2C4BC" stroke-width="2.6" stroke-dasharray="4 3" transform="rotate(-6 32 24)"/><text x="32" y="30" text-anchor="middle" fill="#F2C4BC" font-size="17" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2">SEL</text></svg></span><span>·</span><span>Loaded Fries Bangkokstyle</span><span aria-hidden="true" style="display:inline-flex"><svg width="46" height="34" viewBox="0 0 64 48" fill="none"><ellipse cx="32" cy="24" rx="29" ry="20" stroke="#F2C4BC" stroke-width="2.6" stroke-dasharray="4 3" transform="rotate(-6 32 24)"/><text x="32" y="30" text-anchor="middle" fill="#F2C4BC" font-size="17" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2">BKK</text></svg></span><span>·</span><span>Loaded Fries Hanoi</span><span aria-hidden="true" style="display:inline-flex"><svg width="46" height="34" viewBox="0 0 64 48" fill="none"><ellipse cx="32" cy="24" rx="29" ry="20" stroke="#F2C4BC" stroke-width="2.6" stroke-dasharray="4 3" transform="rotate(-6 32 24)"/><text x="32" y="30" text-anchor="middle" fill="#F2C4BC" font-size="17" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2">HAN</text></svg></span><span>·</span><span>Loaded Fries Bulgogi</span><span aria-hidden="true" style="display:inline-flex"><svg width="46" height="34" viewBox="0 0 64 48" fill="none"><ellipse cx="32" cy="24" rx="29" ry="20" stroke="#F2C4BC" stroke-width="2.6" stroke-dasharray="4 3" transform="rotate(-6 32 24)"/><text x="32" y="30" text-anchor="middle" fill="#F2C4BC" font-size="17" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2">SEL</text></svg></span><span>·</span><span>Loaded Fries Bangkokstyle</span><span aria-hidden="true" style="display:inline-flex"><svg width="46" height="34" viewBox="0 0 64 48" fill="none"><ellipse cx="32" cy="24" rx="29" ry="20" stroke="#F2C4BC" stroke-width="2.6" stroke-dasharray="4 3" transform="rotate(-6 32 24)"/><text x="32" y="30" text-anchor="middle" fill="#F2C4BC" font-size="17" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2">BKK</text></svg></span><span>·</span><span>Loaded Fries Hanoi</span><span aria-hidden="true" style="display:inline-flex"><svg width="46" height="34" viewBox="0 0 64 48" fill="none"><ellipse cx="32" cy="24" rx="29" ry="20" stroke="#F2C4BC" stroke-width="2.6" stroke-dasharray="4 3" transform="rotate(-6 32 24)"/><text x="32" y="30" text-anchor="middle" fill="#F2C4BC" font-size="17" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2">HAN</text></svg></span><span>·</span><!--/karte:ticker--></div>
   <button class="ticker__stop" type="button" aria-pressed="false" aria-label="Laufschrift anhalten">
     <svg class="icon-pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1h3v10H2zM7 1h3v10H7z" fill="currentColor"/></svg>
     <svg class="icon-play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" style="display:none"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg>
@@ -544,78 +541,18 @@ footer{
     <div class="pass__kopf">
       <div>
         <p class="eyebrow">Boarding Pass</p>
-        <h3 class="display pass__titel" id="pass-monat">Diese Woche</h3>
+        <h3 class="display pass__titel" id="pass-monat"><!--karte:titel-->29.08.26<!--/karte:titel--></h3>
       </div>
       <p class="pass__meta">Red Lotus Streetfood<br>BC/Wochenmarkt · Sa 10–14</p>
     </div>
 
     <!-- Wird live aus der Red-Lotus-App befüllt (website/streetfood_karte);
          der statische Inhalt bleibt als Rückfallebene, falls Firestore nicht erreichbar ist. -->
-    <div id="pass-gerichte">
-    <!-- Dauerbrenner -->
-    <div class="gericht">
-      <span class="gericht__stempel stempel" aria-hidden="true">
-        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-          <circle cx="32" cy="32" r="29" stroke="#E0473A" stroke-width="2" stroke-dasharray="4 3"/>
-          <text x="32" y="28" text-anchor="middle" fill="#E0473A" font-size="9" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1">IMMER</text>
-          <text x="32" y="40" text-anchor="middle" fill="#E0473A" font-size="9" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1">AN BORD</text>
-        </svg>
-      </span>
-      <p class="gericht__name"><span translate="no">Loaded Fries</span>
-        <span class="gericht__zusatz">Unser Dauerbrenner — Fries, Toppings, alles drauf</span>
-      </p>
-      <p class="gericht__preis">10,50&nbsp;€</p>
-    </div>
-
-    <!-- Motto-Gerichte des Monats -->
-    <div class="gericht">
-      <span class="gericht__stempel stempel--2" aria-hidden="true">
-        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-          <ellipse cx="32" cy="32" rx="29" ry="22" stroke="#F2C4BC" stroke-width="2" stroke-dasharray="4 3"/>
-          <text x="32" y="30" text-anchor="middle" fill="#F2C4BC" font-size="13" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2">BKK</text>
-          <text x="32" y="42" text-anchor="middle" fill="#F2C4BC" font-size="7" font-family="Arial, sans-serif" letter-spacing="1">BANGKOK</text>
-        </svg>
-      </span>
-      <p class="gericht__name"><span translate="no">Fried Rice</span>
-        <span class="gericht__zusatz">Gebratener Reis mit Gemüse &amp; Ei — vegan möglich</span>
-      </p>
-      <p class="gericht__preis">8,90&nbsp;€</p>
-    </div>
-
-    <div class="gericht">
-      <span class="gericht__stempel stempel" aria-hidden="true">
-        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-          <ellipse cx="32" cy="32" rx="29" ry="22" stroke="#F2C4BC" stroke-width="2" stroke-dasharray="4 3"/>
-          <text x="32" y="30" text-anchor="middle" fill="#F2C4BC" font-size="13" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2">TYO</text>
-          <text x="32" y="42" text-anchor="middle" fill="#F2C4BC" font-size="7" font-family="Arial, sans-serif" letter-spacing="1">TOKYO</text>
-        </svg>
-      </span>
-      <p class="gericht__name"><span translate="no">Veggie Gyoza</span>
-        <span class="gericht__zusatz">Knusprig gebratene Teigtaschen — vegan</span>
-      </p>
-      <p class="gericht__preis">7,50&nbsp;€</p>
-    </div>
-
-    <div class="gericht">
-      <span class="gericht__stempel stempel--2" aria-hidden="true">
-        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-          <ellipse cx="32" cy="32" rx="29" ry="22" stroke="#F2C4BC" stroke-width="2" stroke-dasharray="4 3"/>
-          <text x="32" y="30" text-anchor="middle" fill="#F2C4BC" font-size="13" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2">SEL</text>
-          <text x="32" y="42" text-anchor="middle" fill="#F2C4BC" font-size="7" font-family="Arial, sans-serif" letter-spacing="1">SEOUL</text>
-        </svg>
-      </span>
-      <p class="gericht__name"><span translate="no">Bulgogi Bowl</span>
-        <span class="gericht__zusatz">Mariniertes Rind, Reis, Gemüse
-          <span class="badge-chili" role="img" aria-label="scharf">
-            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10.5 3.5c.3-1 .1-1.8-.5-2.5 1.8.2 2.8 1.2 3 3 .8 4.5-2 9-6.5 10.5C3.6 15.5 2 13.8 2 11.5c2.5 1 4.5.5 6-1.5 1.2-1.6 1.7-3.7 2.5-6.5Z" fill="#FF2E63"/></svg>
-            scharf
-          </span>
-        </span>
-      </p>
-      <p class="gericht__preis">9,90&nbsp;€</p>
-    </div>
-
-    </div><!-- /pass-gerichte -->
+    <div id="pass-gerichte"><!--karte:gerichte-->
+<div class="gericht"><span class="gericht__stempel stempel" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="29" stroke="#E0473A" stroke-width="2" stroke-dasharray="4 3"/><text x="32" y="28" text-anchor="middle" fill="#E0473A" font-size="9" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1">IMMER</text><text x="32" y="40" text-anchor="middle" fill="#E0473A" font-size="9" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1">AN BORD</text></svg></span><p class="gericht__name"><span translate="no">Loaded Fries Bulgogi</span><span class="gericht__zusatz">Fries mit einem Rinderhacktopping nach koreanischer Art. Dazu gibt es eine selbstgemachte Cheddar-Sauce, Gochujang Mayo und Pickels</span></p><p class="gericht__preis">9,50 €</p></div>
+<div class="gericht"><span class="gericht__stempel stempel--2" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="29" stroke="#E0473A" stroke-width="2" stroke-dasharray="4 3"/><text x="32" y="28" text-anchor="middle" fill="#E0473A" font-size="9" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1">IMMER</text><text x="32" y="40" text-anchor="middle" fill="#E0473A" font-size="9" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1">AN BORD</text></svg></span><p class="gericht__name"><span translate="no">Loaded Fries Bangkokstyle</span><span class="gericht__zusatz">Fries mit einem Curry Chickentopping. Dazu gibt es selbstgemachte Cheddar-Sauce und Sweet-Chili Mayo und Pickles.</span></p><p class="gericht__preis">10,90 €</p></div>
+<div class="gericht"><span class="gericht__stempel stempel" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="29" stroke="#E0473A" stroke-width="2" stroke-dasharray="4 3"/><text x="32" y="28" text-anchor="middle" fill="#E0473A" font-size="9" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1">IMMER</text><text x="32" y="40" text-anchor="middle" fill="#E0473A" font-size="9" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1">AN BORD</text></svg></span><p class="gericht__name"><span translate="no">Loaded Fries Hanoi</span><span class="gericht__zusatz">Fries mit Veggiehacktopping mit frischen Kräutern, veganer Siracha-Mayo, Hoisin Sauce und Pickles. · <span class="badge-tag">vegan</span></span></p><p class="gericht__preis">9,50 €</p></div>
+<!--/karte:gerichte--></div><!-- /pass-gerichte -->
 
     <p class="pass__fuss">Alles frisch am Truck gekocht. Solange der Vorrat reicht — wer zu spät kommt, kennt uns.</p>
   </div>

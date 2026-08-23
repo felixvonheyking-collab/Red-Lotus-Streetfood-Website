@@ -1,0 +1,46 @@
+name: Wochenkarte statisch schreiben
+
+# Trägt die aktuelle Wochenkarte aus Firestore als HTML in index.html ein.
+# Grund: Das JavaScript auf der Seite holt die Daten erst im Browser —
+# Googlebot rendert das verzögert, die Crawler von ChatGPT, Perplexity und
+# Claude in der Regel gar nicht. Ohne diesen Lauf steht im ausgelieferten HTML
+# dauerhaft der Stand vom letzten Commit.
+#
+# Ein Commit hier löst das Hostinger-Deployment aus, die Änderung ist also
+# wenige Minuten später live. Wenn sich nichts geändert hat, wird nicht
+# committet — es entstehen keine Leerläufe in der Historie.
+
+on:
+  schedule:
+    # 05:00 und 16:00 UTC. Der Abendlauf greift Karten auf, die unter der Woche
+    # gepflegt werden; der Morgenlauf sichert den Stand vor dem Samstagsmarkt.
+    - cron: "0 5,16 * * *"
+  workflow_dispatch:        # von Hand über den Actions-Reiter startbar
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wochenkarte
+  cancel-in-progress: false
+
+jobs:
+  schreiben:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Wochenkarte holen und eintragen
+        run: python3 tools/karte-statisch.py
+
+      - name: Bei Änderung committen
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Keine Änderung — nichts zu committen."
+            exit 0
+          fi
+          git config user.name  "Wochenkarten-Bot"
+          git config user.email "actions@github.com"
+          git add index.html
+          git commit -m "Wochenkarte aktualisiert ($(date -u +%d.%m.%Y))"
+          git push
