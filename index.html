@@ -4,8 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#1E0B0E">
-<title>Red Lotus Streetfood — Samstags auf dem Biberacher Wochenmarkt</title>
-<meta name="description" content="Loaded Fries, Bowls & Asia-Klassiker vom Foodtruck. Jede Woche eine frische Karte, inspiriert von den Nachtmärkten Asiens. Samstags 10–15 Uhr, Biberacher Wochenmarkt.">
+<title>Red Lotus Streetfood — Foodtruck Biberach</title>
+<meta name="description" content="Asiatischer Foodtruck in Biberach: Loaded Fries, Bowls &amp; Asia-Klassiker, jede Woche neue Karte. Samstags 10–15 Uhr auf dem Wochenmarkt, buchbar für Events.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/img/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="Red Lotus Streetfood">
 <meta property="og:description" content="Loaded Fries, Bowls & Asia-Klassiker vom Foodtruck. Samstags 10–15 Uhr auf dem Biberacher Wochenmarkt.">
 <meta property="og:type" content="website">
@@ -186,7 +189,7 @@ h1,h2,h3{text-wrap:balance}
   gap:2rem;align-items:center;
 }
 .hero__eyebrow{margin-bottom:1.2rem}
-.hero h1{font-size:clamp(4rem,14vw,12.5rem)}
+.hero h1{font-size:clamp(3.6rem,14vw,12.5rem);hyphens:auto;-webkit-hyphens:auto}
 .hero h1 .klammer{display:block;font-size:.32em;letter-spacing:.02em;margin-top:.35em}
 .hero__sub{
   max-width:34rem;margin-top:1.6rem;color:var(--blush);font-size:1.05rem;
@@ -270,6 +273,10 @@ h1,h2,h3{text-wrap:balance}
   padding:clamp(4rem,10vh,8rem) 1.25rem;
 }
 .sektion--voll{max-width:none;padding-left:0;padding-right:0}
+.prinzip{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2rem;margin-top:2.5rem}
+.prinzip h3{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--rot);font-size:1.35rem;letter-spacing:.01em;margin-bottom:.5rem}
+.prinzip p{color:var(--blush);font-size:.95rem}
+.sektion__lead{max-width:44rem;color:var(--cream)}
 
 /* ---------- Boarding Pass / Menü ---------- */
 .pass{
@@ -459,7 +466,7 @@ footer{
 <header class="nav">
   <div class="nav__inner">
     <a class="nav__logo" href="#top" aria-label="Red Lotus Streetfood — zum Seitenanfang">
-      <img src="assets/img/logo.webp" alt="" width="760" height="433" style="height:52px;width:auto">
+      <img src="assets/img/logo.webp" alt="Red Lotus Streetfood" width="760" height="433" style="height:52px;width:auto">
     </a>
     <nav aria-label="Hauptnavigation">
       <ul class="nav__links">
@@ -483,7 +490,7 @@ footer{
   <div>
     <p class="eyebrow hero__eyebrow">Red Lotus · Biberach an der Riß</p>
     <h1 id="hero-titel" class="display">
-      Street&shy;food
+      Streetfood
       <span class="klammer">(vom Truck. Vom Feinsten.)</span>
     </h1>
     <p class="hero__sub">
@@ -649,6 +656,45 @@ footer{
       <p class="eyebrow">Aktuelles</p>
       <h2 id="aktuelles-titel" class="display section-title"></h2>
       <p class="aktuelles__text" id="aktuelles-text"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PRINZIP / WAS UNS AUSMACHT ==================== -->
+<section class="sektion" id="prinzip" aria-labelledby="prinzip-titel">
+  <p class="eyebrow">Was uns ausmacht</p>
+  <h2 id="prinzip-titel" class="display section-title">Kleine Karte <span class="klammer">(großer Unterschied.)</span></h2>
+  <p class="sektion__lead">
+    Streetfood heißt bei uns nicht: alles vorgekocht, alles immer gleich. Paew steht selbst
+    im Truck und kocht jede Portion frisch, während ihr davor wartet. Genau deshalb ist die
+    Karte klein — drei bis vier Gerichte pro Woche, mehr geht nicht, wenn jede Schale
+    von Hand entsteht.
+  </p>
+  <div class="prinzip">
+    <div>
+      <h3>Jede Woche neu</h3>
+      <p>
+        Statt einer starren Speisekarte stellen wir jede Woche eine neue zusammen — mal
+        koreanisch, mal thailändisch, mal vietnamesisch. Wer regelmäßig auf dem
+        Biberacher Wochenmarkt vorbeikommt, isst nie zweimal dasselbe. Nur die
+        Loaded Fries bleiben, die lassen sich unsere Stammgäste nicht nehmen.
+      </p>
+    </div>
+    <div>
+      <h3>Aus den Nachtmärkten</h3>
+      <p>
+        Unsere Gerichte stammen von den Straßenständen Asiens: Bangkok, Seoul, Tokyo,
+        Hanoi, Hongkong. Deshalb trägt auf unserer Wochenkarte jedes Gericht den Stempel
+        der Stadt, aus der es kommt — ein kleiner Reisepass zum Mitessen.
+      </p>
+    </div>
+    <div>
+      <h3>Für alle was dabei</h3>
+      <p>
+        Vegan und vegetarisch sind bei uns keine Randnotiz: Auf jeder Wochenkarte sind
+        entsprechende Gerichte gekennzeichnet, vieles lässt sich zusätzlich anpassen.
+        Sagt einfach am Truck Bescheid, was ihr braucht — wir kochen ohnehin frisch.
+      </p>
     </div>
   </div>
 </section>

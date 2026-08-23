@@ -1,3 +1,9 @@
+# Zeichensatz im HTTP-Header mitsenden (nicht nur im <meta>)
+AddDefaultCharset UTF-8
+AddType "text/html; charset=UTF-8" .html
+AddType "text/plain; charset=UTF-8" .txt
+AddType "application/xml; charset=UTF-8" .xml
+
 # http -> https (kanonisch)
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
