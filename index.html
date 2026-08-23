@@ -379,9 +379,9 @@ h1,h2,h3{text-wrap:balance}
 @media (max-width:860px){.buchen__inner{grid-template-columns:1fr}}
 .buchen__text{color:var(--blush);max-width:34rem;margin-top:1.2rem}
 .buchen__fotos{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:flex-start;margin-top:2.5rem}
-.buchen__fotos .polaroid{width:min(240px,70vw)}
-.buchen__fotos .polaroid:first-child{transform:rotate(-3deg)}
-.buchen__fotos .polaroid:last-child{transform:rotate(4deg)}
+.buchen__fotos .polaroid{width:min(240px,70vw);transform:rotate(-3deg)}
+.buchen__foto-rechts{width:min(240px,70vw);transform:rotate(4deg);margin:3rem 1.5rem 0 auto}
+@media (max-width:860px){.buchen__foto-rechts{margin:2.5rem auto 0 0}}
 .formular label{
   display:block;font-size:.72rem;font-weight:600;letter-spacing:.24em;
   text-transform:uppercase;color:var(--blush);margin:1.1rem 0 .35rem;
@@ -752,10 +752,6 @@ footer{
           <img src="assets/img/thai-tea.webp" alt="Original Thai Tea mit Eiswürfeln und Papierstrohhalm am Truck" width="900" height="1126" loading="lazy">
           <figcaption translate="no">Original Thai Tea</figcaption>
         </figure>
-        <figure class="polaroid">
-          <img src="assets/img/salat-schiffchen.webp" alt="Glasnudelsalat mit Paprika, Kräutern und Kracker im Pappschiffchen" width="1000" height="750" loading="lazy">
-          <figcaption>Glasnudelsalat</figcaption>
-        </figure>
       </div>
     </div>
     <div>
@@ -787,6 +783,10 @@ footer{
         <button type="submit" class="pill pill--voll">Anfrage senden</button>
         <p class="formular__status" id="bf-status" aria-live="polite"></p>
       </form>
+      <figure class="polaroid buchen__foto-rechts">
+        <img src="assets/img/salat-schiffchen.webp" alt="Glasnudelsalat mit Paprika, Kräutern und Kracker im Pappschiffchen" width="1000" height="750" loading="lazy">
+        <figcaption>Glasnudelsalat</figcaption>
+      </figure>
     </div>
   </div>
 </section>
