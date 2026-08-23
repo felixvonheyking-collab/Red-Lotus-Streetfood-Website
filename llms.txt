@@ -4,7 +4,7 @@
 
 ## Kernfakten
 
-- Standort: Jeden Samstag, 10–15 Uhr, Wochenmarkt in Biberach an der Riß
+- Standort: Jeden Samstag, 10–14 Uhr, Wochenmarkt in Biberach an der Riß
 - Karte: Wöchentlich wechselnd, 3–4 Gerichte; die Loaded Fries sind immer dabei. Aktuelle Wochenkarte: https://redlotusstreetfood.com/#karte
 - Bezahlung: Nur Barzahlung und PayPal (kein Kartenlesegerät)
 - Vegan/Vegetarisch: Auf jeder Wochenkarte gekennzeichnet, Anpassungen auf Wunsch
@@ -14,6 +14,13 @@
 ## Buchung / Catering
 
 Der Foodtruck ist buchbar für Festivals, Stadtfeste, Firmenfeste, Geburtstage und private Feiern aller Art — in Biberach und Umgebung, auf Anfrage auch darüber hinaus. Anfrage über das Formular: https://redlotusstreetfood.com/#buchen
+
+Technische Eckdaten für Veranstalter (zwei Trailer verfügbar):
+
+- Strom: kleiner Trailer 1x16A Starkstrom (CEE); großer Truck je nach Bedarf 1x16A, 1x32A oder 2x16A Starkstrom (CEE)
+- Wasser: kein Anschluss nötig, wir sind mit eigenem Wasservorrat autark
+- Stellfläche: kleiner Trailer ca. 3,20 m Länge (mit Deichsel) x 2 m Breite; großer Truck ca. 4,50 m x 2,6 m, jeweils plus Rangierfläche
+- Vorlauf: je nach Saison und Wochentag unterschiedlich — Samstage im Sommer früh anfragen, unter der Woche im Herbst oft auch kurzfristig möglich
 
 Für gesetzte Dinner, Buffet-Catering und Hochzeiten: Schwester-Marke Red Lotus Asian Food (https://www.redlotus-asianfood.com) — Catering, Kochkurse und Mittagstisch in Warthausen bei Biberach.
 
