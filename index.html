@@ -378,11 +378,17 @@ h1,h2,h3{text-wrap:balance}
 }
 @media (max-width:860px){.buchen__inner{grid-template-columns:1fr}}
 .buchen__text{color:var(--blush);max-width:34rem;margin-top:1.2rem}
-.buchen__fotos{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:flex-start;margin-top:2.5rem}
-.buchen__fotos .polaroid{width:min(240px,70vw);transform:rotate(-3deg)}
-.buchen__fotos .polaroid:nth-child(2){transform:rotate(3deg)}
-.buchen__foto-rechts{width:min(240px,70vw);transform:rotate(4deg);margin:3rem 1.5rem 0 auto}
-@media (max-width:860px){.buchen__foto-rechts{margin:2.5rem auto 0 0}}
+/* Bilderreihe unter Text und Formular, über die volle Breite —
+   in einer schmalen Spalte würden die Polaroids untereinander rutschen. */
+.buchen__fotos{
+  grid-column:1 / -1;
+  display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;
+  gap:clamp(1.5rem,4vw,3.5rem);margin-top:1.5rem;
+}
+.buchen__fotos .polaroid{width:min(240px,70vw)}
+.buchen__fotos .polaroid:nth-child(1){transform:rotate(-3deg)}
+.buchen__fotos .polaroid:nth-child(2){transform:rotate(2.5deg)}
+.buchen__fotos .polaroid:nth-child(3){transform:rotate(-2deg)}
 .formular label{
   display:block;font-size:.72rem;font-weight:600;letter-spacing:.24em;
   text-transform:uppercase;color:var(--blush);margin:1.1rem 0 .35rem;
@@ -685,16 +691,6 @@ footer{
         Ihr plant ein gesetztes Dinner, Buffet-Catering oder eine Hochzeit? Das macht unsere
         <a href="https://www.redlotus-asianfood.com" rel="noopener">große Schwester</a>.
       </p>
-      <div class="buchen__fotos">
-        <figure class="polaroid">
-          <img src="assets/img/thai-tea.webp" alt="Original Thai Tea mit Eiswürfeln und Papierstrohhalm am Truck" width="900" height="1126" loading="lazy">
-          <figcaption translate="no">Original Thai Tea</figcaption>
-        </figure>
-        <figure class="polaroid">
-          <img src="assets/img/knutschkugel.webp" alt="Der kleine schwarze Foodtrailer mit hochgeklappter Klappe, Paew kocht darin am Herd" width="900" height="1200" loading="lazy">
-          <figcaption>Die Knutschkugel</figcaption>
-        </figure>
-      </div>
     </div>
     <div>
       <form class="formular" id="buchen-formular" novalidate>
@@ -725,7 +721,18 @@ footer{
         <button type="submit" class="pill pill--voll">Anfrage senden</button>
         <p class="formular__status" id="bf-status" aria-live="polite"></p>
       </form>
-      <figure class="polaroid buchen__foto-rechts">
+    </div>
+
+    <div class="buchen__fotos">
+      <figure class="polaroid">
+        <img src="assets/img/thai-tea.webp" alt="Original Thai Tea mit Eiswürfeln und Papierstrohhalm am Truck" width="900" height="1126" loading="lazy">
+        <figcaption translate="no">Original Thai Tea</figcaption>
+      </figure>
+      <figure class="polaroid">
+        <img src="assets/img/knutschkugel.webp" alt="Der kleine schwarze Foodtrailer mit hochgeklappter Klappe, Paew kocht darin am Herd" width="900" height="1200" loading="lazy">
+        <figcaption>Die Knutschkugel</figcaption>
+      </figure>
+      <figure class="polaroid">
         <img src="assets/img/salat-schiffchen.webp" alt="Glasnudelsalat mit Paprika, Kräutern und Kracker im Pappschiffchen" width="1000" height="750" loading="lazy">
         <figcaption>Glasnudelsalat</figcaption>
       </figure>
